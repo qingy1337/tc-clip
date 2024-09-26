@@ -1695,14 +1695,14 @@ class ColorJitter:
         self.p = p
         self.p_gray = p_gray
         self.worker = torchvision.transforms.ColorJitter(brightness=brightness, contrast=contrast, saturation=saturation, hue=hue)
-        
+
 
     def __call__(self, results):
         imgs = results['imgs']
         v = random.random()
         if v < self.p:
             imgs = [np.asarray(self.worker(Image.fromarray(img))) for img in imgs]
-        
+
         results['imgs'] = imgs
         return results
 
@@ -1721,13 +1721,13 @@ class GrayScale:
         v = random.random()
         if v < self.p:
             imgs = [np.asarray(self.worker_gray(Image.fromarray(img))) for img in imgs]
-        
+
         results['imgs'] = imgs
         return results
-    
+
     def __repr__(self):
         repr_str = (f'{self.__class__.__name__}')
-        return repr_str  
+        return repr_str
 
 
 @PIPELINES.register_module()
@@ -1940,7 +1940,7 @@ class SampleFrames:
             ratio = (num_frames - ori_clip_len + 1.0) / self.num_clips
             clip_offsets = np.around(np.arange(self.num_clips) * ratio)
         else:
-            clip_offsets = np.zeros((self.num_clips, ), dtype=np.int)
+            clip_offsets = np.zeros((self.num_clips, ), dtype=int)
 
         return clip_offsets
 
@@ -1962,11 +1962,11 @@ class SampleFrames:
         avg_interval = (num_frames - ori_clip_len + 1) / float(self.num_clips)
         if num_frames > ori_clip_len - 1:
             base_offsets = np.arange(self.num_clips) * avg_interval
-            clip_offsets = (base_offsets + avg_interval / 2.0).astype(np.int)
+            clip_offsets = (base_offsets + avg_interval / 2.0).astype(int)
             if self.twice_sample:
                 clip_offsets = np.concatenate([clip_offsets, base_offsets])
         else:
-            clip_offsets = np.zeros((self.num_clips, ), dtype=np.int)
+            clip_offsets = np.zeros((self.num_clips, ), dtype=int)
         return clip_offsets
 
     def _sample_clips(self, num_frames):
@@ -2048,7 +2048,7 @@ class SampleFrames:
 
         # if total_frames < 32:
         # print(results['filename'], total_frames, frame_inds)
-        results['frame_inds'] = frame_inds.astype(np.int)
+        results['frame_inds'] = frame_inds.astype(int)
         results['clip_len'] = self.clip_len
         results['frame_interval'] = self.frame_interval
         results['num_clips'] = self.num_clips
@@ -2325,7 +2325,7 @@ class RandAugment:
             results['imgs'] = [
                 np.asarray(self.do_ops(ops, buf)) for buf in buffer
             ]
-        
+
         elif self.level == 'image':
             buffer = [
                 transforms.ToPILImage()(frame) for frame in results['imgs']
@@ -2347,8 +2347,8 @@ class RandAugment:
         results['img_shape'] = (img_h, img_w)
 
         return results
-            
-    
+
+
     def __repr__(self):
         repr_str = self.__class__.__name__ + f'(transforms={self.aug})'
         return repr_str

@@ -1,0 +1,31 @@
+[09-26 09:56:14 TCCLIP] (3979588942.py 9): INFO working dir: inference
+[09-26 09:56:15 TCCLIP] (build_trainer.py 56): INFO Loading CLIP (backbone: ViT-B/16)
+[09-26 09:56:17 TCCLIP] (build_trainer.py 59): INFO [34m[1mBuilding TCCLIP[0m
+[09-26 09:56:17 TCCLIP] (tc_clip_prompt_learner.py 54): INFO Video-conditional prompt learning
+[09-26 09:56:17 TCCLIP] (tc_clip_prompt_learner.py 55): INFO Initial context: "a photo of a"
+[09-26 09:56:17 TCCLIP] (tc_clip_prompt_learner.py 56): INFO Number of learnable text prompt vectors: 4
+[09-26 09:56:17 TCCLIP] (tc_clip_text_encoder.py 96): INFO Copy CLIP transformer 11th layer weights to prompt generation layer
+[09-26 09:56:17 TCCLIP] (tc_clip_text_encoder.py 106): INFO Prompt generation level: [11]
+[09-26 09:56:17 TCCLIP] (tc_clip_text_encoder.py 107): INFO Prompt generation stop grad: True
+[09-26 09:56:17 TCCLIP] (tc_clip.py 27): INFO Using context tokens from vision layer [11]
+[09-26 09:56:17 TCCLIP] (build_trainer.py 97): INFO ----------------------------------------------------
+[09-26 09:56:17 TCCLIP] (build_trainer.py 98): INFO Freezed Parameters
+[09-26 09:56:17 TCCLIP] (build_trainer.py 102): INFO ----------------------------------------------------
+[09-26 09:56:17 TCCLIP] (build_trainer.py 105): INFO Number of Parameters: 127.5M
+[09-26 09:56:18 TCCLIP] (build_trainer.py 56): INFO Loading CLIP (backbone: ViT-B/16)
+[09-26 09:56:19 TCCLIP] (build_trainer.py 59): INFO [34m[1mBuilding TCCLIP[0m
+[09-26 09:56:19 TCCLIP] (tc_clip_prompt_learner.py 54): INFO Video-conditional prompt learning
+[09-26 09:56:19 TCCLIP] (tc_clip_prompt_learner.py 55): INFO Initial context: "a photo of a"
+[09-26 09:56:19 TCCLIP] (tc_clip_prompt_learner.py 56): INFO Number of learnable text prompt vectors: 4
+[09-26 09:56:19 TCCLIP] (tc_clip_text_encoder.py 96): INFO Copy CLIP transformer 11th layer weights to prompt generation layer
+[09-26 09:56:19 TCCLIP] (tc_clip_text_encoder.py 106): INFO Prompt generation level: [11]
+[09-26 09:56:19 TCCLIP] (tc_clip_text_encoder.py 107): INFO Prompt generation stop grad: True
+[09-26 09:56:19 TCCLIP] (tc_clip.py 27): INFO Using context tokens from vision layer [11]
+[09-26 09:56:19 TCCLIP] (build_trainer.py 97): INFO ----------------------------------------------------
+[09-26 09:56:19 TCCLIP] (build_trainer.py 98): INFO Freezed Parameters
+[09-26 09:56:19 TCCLIP] (build_trainer.py 102): INFO ----------------------------------------------------
+[09-26 09:56:19 TCCLIP] (build_trainer.py 105): INFO Number of Parameters: 127.5M
+[09-26 09:56:20 TCCLIP] (tools.py 180): INFO ==============> Resuming from zero_shot_k400_llm_tc_clip.pth....................
+[09-26 09:56:20 TCCLIP] (tools.py 208): INFO resume model: _IncompatibleKeys(missing_keys=['prompt_learner.token_prefix', 'prompt_learner.token_suffix'], unexpected_keys=[])
+[09-26 09:56:20 TCCLIP] (tools.py 218): INFO => loaded successfully 'zero_shot_k400_llm_tc_clip.pth' (epoch 9)
+[09-26 09:56:20 TCCLIP] (1028797808.py 4): INFO Loaded checkpoint at epoch 10 with max accuracy 82.1
